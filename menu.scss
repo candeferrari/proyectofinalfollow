@@ -1,0 +1,97 @@
+ul {
+  text-decoration: none;
+}
+li {
+  text-decoration-style: none;
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+.navbar {
+    overflow: hidden;
+    background-color: white;
+    font-family: Raleway;
+    font-size: 25px;
+    color: gray;
+    list-style-type: none;
+    text-decoration: none;
+    border-radius: 25px;
+  }
+  
+  /* Navigation links */
+  .navbar a {
+    float: left;
+    font-size: 25px;
+    color: gray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: raleway;
+    border-radius: 25px;
+  }
+  
+  /* The subnavigation menu */
+  .subnav {
+    float: left;
+    overflow: hidden;
+    font-family: raleway;
+    color: white;
+    border-radius: 25px;
+  }
+  
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 25px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: white;
+    font-family: raleway;
+    margin: 0;
+    border-radius: 25px;
+  }
+  
+  /* Add a red background color to navigation links on hover */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: #058CFF;
+    color: white;
+    border-radius: 25px;
+  }
+  
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 135px;
+    background-color: #058CFF;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    border-radius: 25px;
+  }
+  
+  /* Style the subnav links */
+  .subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+    font-family: raleway; 
+    font-size: 15px;
+    border-radius: 25px;
+  }
+  
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: #FA1CA4;
+    color: white;
+    border-radius: 25px;
+  }
+  
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+    color: white;
+    border-radius: 25px;
+  }
