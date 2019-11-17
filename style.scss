@@ -47,18 +47,19 @@ h2 {
   background-color: $yellow;
   padding: 10px;
 }
-
+ 
 
 .contenedor_logo {
   display: grid ;
-  grid-template-columns: 40% 30% 30% ;
-  column-gap: 10px;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-template-areas: "logo" "slogan" "redes";
+  column-gap: 1px;
   position: absolute;
 }
 .logo img{
-  padding: 35px;
   width: 80%;
-  
+  grid-area: "logo"; 
 }
 .slogan {
   width: 20%;
@@ -67,47 +68,69 @@ h2 {
   font-family: 'motserrat';
   color: white;
   font-size: 50px;
+  grid-area: "slogan";
 }
 .redes {
   padding: 200px;
- 
+  grid-area: "redes";
+ }
+ /*media header*/
+ @media (max-width: 768px){
+  .contenedor_logo{
+   grid-template-columns: auto; 
+   grid-auto-rows: 3;
+   grid-template-areas:"logo" "slogan" "redes";
+  }
+  .logo img {
+    width: 80%;
+  }
+   .slogan{
+    width: 10%;
+    padding-top: 10px;
+    font-size: 30px;
+  }
+
+    
 }
+
 /*novedades*/
-.grid-novedades{
+.container {
   display: grid;
-  grid-gap: 20px;
-  justify-content: center;
-  align-content: center;
-  padding: 100px;
-  grid-template-areas: 
-  "menu menu middle"
-  "middle menu menu"
-  "menu menu middle";
+  grid-template-rows: repeat(3, auto) ; 
+  grid-template-columns: auto auto;
+  grid-template-areas: "uno dos" "tres cuatro" "cinco seis";
+  text-align: center;
+  padding: 10px;
 }
-.img {
-  grid-template-areas: "menu";
-  
+.box1 {
+  grid-area: "uno";
 }
-.img_2 {
-  grid-column: 3/3;
-  grid-template-rows: auto;
-  grid-template-areas: "menu";
+.box2 {
+  grid-area: "dos";
 }
-.texto {
-  text-align: center; 
-  grid-column: 3/3;
-  grid-template-rows: 10px;
-  grid-template-areas: "middle";
+.box3 {
+  grid-area: "tres";
 }
-.texto_2{
-  text-align: center; 
-  grid-column: 1/1;
-  grid-template-rows: 10px;
-  grid-template-areas: "middle";
+.box4 {
+  grid-area: "cuatro";
 }
-
-
-
+.box5 {
+  grid-area: "cinco";
+}
+.box6 {
+  grid-area: "seis";
+}
+/*media novedades*/
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-rows: (6,200px);
+    grid-template-columns: 500px;
+    grid-template-areas: 
+    "uno" "dos" "cuatro" "tres" "cinco" "seis";
+    padding: 5px;
+  }
+}
+​
 /*boton ver más*/
 .button {
   background-color: white; 
@@ -136,13 +159,3 @@ h2 {
   color: white;
 }
 
-@media only screen and (max-width: 666px) {
-  .grid-container {
-    grid-template-areas: 
-    'menu menu menu'
-    'middle middle middle'
-    'middle middle middle'
-    'menu menu menu'
-    'middle middle midlle';
-    }   
-}
